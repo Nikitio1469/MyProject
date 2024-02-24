@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вычисление суммы квадратов</title>
+</head>
+<body>
+    <h1>Вычисление суммы квадратов</h1>
+
+    <form method="post">
+        Введите целое число n: <input type="number" name="n" required>
+        <input type="submit" value="Вычислить">
+    </form>
+
+    <?php
+  
+        $n = $_POST["n"];
+        $total = 0;
+
+        echo "<h2>Результат:</h2>";
+        echo "<ul>";
+
+        $i = 1;
+        while ($i <= $n) {
+            $b = $i * $i;
+            $a += $b;
+            echo "<li>{$i}^2 = {$b}</li>";
+            $i++;
+        }
+
+        echo "</ul>";
+        echo "<p>Сумма квадратов: {$a}</p>";
+    
+    ?>
+</body>
+</html>
+
+
+
+
+ <form method="post">
+        Введите Фамилию, Имя и Отчество (на латинице): <input type="text" name="fio" required>
+        <input type="submit" value="Получить сокращения">
+    </form>
+
+    <?php
+   
+        $fio = $_POST["fio"];
+        $a = explode(" ", $fio);
+
+        if (count($a) == 3) {
+            $surname = $a[0];
+            $name = $a[1];
+            $c = $a[2];
+		}
+            $surname_short = $surname . " " . substr($name, 0, 1) . ". " . substr($c, 0, 1) . ".";
+            $full_short = substr($surname, 0, 1) . "." . substr($name, 0, 1) . "." . substr($c, 0, 1) . ".";
+
+            echo "<h2>Сокращенные варианты:</h2>";
+            echo "<p>С полной фамилией: {$surname_short}</p>";
+            echo "<p>Полностью сокращенный: {$full_short}</p>";
+		   
+	
+    ?>
+	
+	
+	
+	 <form method="POST">
+        <label for="number">Введите число:</label>
+        <input type="text" id="number" name="number">
+        <input type="submit" value="Посчитать">
+    </form>
+
+    <?php
+     
+        // Получаем число из формы
+        $inputNumber = $_POST["number"];
+
+        // Инициализируем переменную для хранения суммы цифр
+        $sum = 0;
+
+        // Инициализируем индекс
+        $i = 0;
+
+        // Используем цикл while для обхода каждой цифры числа
+        while ($i < strlen($inputNumber)) {
+            $a = $inputNumber[$i];
+            $sum += intval($a);
+            $i++;
+        }
+
+        // Выводим результат
+        echo "<p>Сумма цифр числа $inputNumber равна $sum</p>";
+    
+    ?>
+	</body>
+	</html>
+	
